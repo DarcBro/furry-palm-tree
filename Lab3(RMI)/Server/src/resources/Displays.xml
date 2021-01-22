@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!DOCTYPE displays [
+        <!ELEMENT displays (display)*>
+        <!ELEMENT display (display_name|resolution|diagonal|update_frequency|price)*>
+        <!ATTLIST display
+                ID CDATA #REQUIRED>
+        <!ELEMENT display_name (#PCDATA)>
+        <!ELEMENT resolution (#PCDATA)>
+        <!ELEMENT diagonal (#PCDATA)>
+        <!ELEMENT update_frequency (#PCDATA)>
+        <!ELEMENT price (#PCDATA)>
+        ]>
+<displays>
+    <display ID="322">
+        <display_name>HP</display_name>
+        <resolution>1920x1080</resolution>
+        <diagonal>18.5</diagonal>
+        <update_frequency>60</update_frequency>
+        <price>5500</price>
+    </display>
+    <display ID="122">
+        <display_name>Philips</display_name>
+        <resolution>1920x1080</resolution>
+        <diagonal>19.5</diagonal>
+        <update_frequency>60</update_frequency>
+        <price>5500</price>
+    </display>
+    <display ID="340">
+        <display_name>AOC</display_name>
+        <resolution>1920x1080</resolution>
+        <diagonal>21.5</diagonal>
+        <update_frequency>60</update_frequency>
+        <price>7200</price>
+    </display>
+    <display ID="458">
+        <display_name>Acer</display_name>
+        <resolution>1920x1080</resolution>
+        <diagonal>27</diagonal>
+        <update_frequency>75</update_frequency>
+        <price>11000</price>
+    </display>
+    <display ID="501">
+        <display_name>Dell</display_name>
+        <resolution>1920x1080</resolution>
+        <diagonal>27</diagonal>
+        <update_frequency>75</update_frequency>
+        <price>12500</price>
+    </display>
+</displays>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="use/css/style.css">
+    <title>DisplaysHTML</title>
+    <script src="use/js/jquery.js"></script>
+</head>
+<body>
+    <section>
+        <div>
+            <div>
+                <div>
+				<h1 align='center'>Добавление дисплея в таблицу</h1>
+                    <form align='center'>
+                        <fieldset>
+						<hr>
+                            <p>Название дисплея</p>
+                            <input type="text" id="display_name">
+                            <p>Разрешение</p>
+                            <input type="text" id="resolution">
+                            <p>Диагональ</p>
+                            <input type="number" id="diagonal">
+                            <p>Частота обновления</p>
+                            <input type="number" id="update_frequency">
+                            <p>Стоимость</p>
+                            <input type="number" id="price">
+							<hr>                           
+                            <button type="button" id="create_row">Добавить запись</button>
+                            <button type="button" id="clear_table">Очистить таблицу</button>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <br>
+    <div></div>
+    <br>
+    <section>
+        <div>
+            <div>
+                <div>
+                    <br>
+                    <table id="displays">
+                        <thead>
+                            <tr>
+                                <th>Название дисплея</th>
+                                <th>Разрешение</th>
+                                <th>Диагональ</th>
+                                <th>Частота обновления</th>
+                                <th>Стоимость</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        let color_button= document.getElementById('create_row');
+        let tableDisplays = document.getElementById('displays');
+        $(function () {
+                $("#create_row").click(
+                
+                function () {
+                    let row = document.createElement('tr');
+
+                    let td = document.createElement('td');
+                    td.innerText = document.getElementById('display_name').value;
+                    row.appendChild(td);
+
+                    td = document.createElement('td');
+                    td.innerText = document.getElementById('resolution').value;
+                    row.appendChild(td);
+
+                    td = document.createElement('td');
+                    td.innerText = document.getElementById('diagonal').value;
+                    row.appendChild(td);
+
+                    td = document.createElement('td');
+                    td.innerText = document.getElementById('update_frequency').value;
+                    row.appendChild(td);
+
+                    td = document.createElement('td');
+                    td.innerText = document.getElementById('price').value;
+                    row.appendChild(td);
+
+                    let button = document.createElement('button');
+                    button.innerText = "Delete";
+                    button.className = "btn btn-danger righbut deleteDep";
+                    button.type  = 'button';
+                    row.appendChild(button);
+
+                    tableDisplays.children[1].appendChild(row);
+                });
+        }); 
+        $('body').on('click', 'button.deleteDep', function() {
+        $(this).parents('tr').remove();  
+        });
+       
+        $(function () {
+                $("#clear_table").click(
+                function () {
+                    var tableHeaderRowCount = 1;
+                    var table = document.getElementById("displays");
+                    var rowCount = table.rows.length;
+                    for (var i = tableHeaderRowCount; i < rowCount; i++) {
+                    table.deleteRow(tableHeaderRowCount);
+                    }
+                });
+            }); 
+    </script>
+</body>
+</html>
