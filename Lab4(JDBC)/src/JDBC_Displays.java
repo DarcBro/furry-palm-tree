@@ -74,6 +74,7 @@ public class JDBC_Displays {
         JScrollPane pane = new JScrollPane(table);
         frame.add(pane, BorderLayout.CENTER);
         JPanel panel = new JPanel(new BorderLayout());
+        JPanel panel1 = new JPanel(new FlowLayout());
         JLabel label = new JLabel("Фильтр");
         panel.add(label, BorderLayout.NORTH);
         final JTextField filterText = new JTextField("");
@@ -265,9 +266,10 @@ public class JDBC_Displays {
             }
         });
 
-        frame.add(button, BorderLayout.SOUTH);
-        frame.add(button1, BorderLayout.BEFORE_LINE_BEGINS);
-        frame.add(button2, BorderLayout.AFTER_LINE_ENDS);
+        panel1.add(button);
+        panel1.add(button1);
+        panel1.add(button2);
+        frame.add(panel1, BorderLayout.SOUTH);
         frame.setSize(700, 300);
         frame.setLocation(500,300);
         frame.setVisible(true);
